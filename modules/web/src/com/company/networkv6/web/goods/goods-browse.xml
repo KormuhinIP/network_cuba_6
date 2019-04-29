@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.networkv6.web.goods.GoodsBrowse"
+        focusComponent="goodsesTable"
+        lookupComponent="goodsesTable"
+        messagesPack="com.company.networkv6.web.goods">
+    <dsContext>
+        <groupDatasource id="goodsesDs"
+                         class="com.company.networkv6.entity.Goods"
+                         view="goods-with-maker">
+            <query>
+                <![CDATA[select e from networkv6$Goods e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="goodsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="goodsesTable"
+                datasource="goodsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="goodsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"
+                        openType="NEW_TAB"/>
+                <action id="edit"
+                        openType="NEW_TAB"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="maker"/>
+                <column id="cost"/>
+            </columns>
+            <rows datasource="goodsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="goodsesTable.create"/>
+                <button id="editBtn" action="goodsesTable.edit"/>
+                <button id="removeBtn" action="goodsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

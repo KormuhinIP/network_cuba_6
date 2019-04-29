@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+
+    <screen id="networkv6$Network.browse" template="com/company/networkv6/web/network/network-browse.xml"/>
+    <screen id="networkv6$Network.edit" template="com/company/networkv6/web/network/network-edit.xml"/>
+    <screen id="networkv6$Shop.browse" template="com/company/networkv6/web/shop/shop-browse.xml"/>
+    <screen id="networkv6$Shop.edit" template="com/company/networkv6/web/shop/shop-edit.xml"/>
+    <screen id="networkv6$Goods.browse" template="com/company/networkv6/web/goods/goods-browse.xml"/>
+    <screen id="networkv6$Goods.edit" template="com/company/networkv6/web/goods/goods-edit.xml"/>
+    <screen id="networkv6$Maker.browse" template="com/company/networkv6/web/maker/maker-browse.xml"/>
+    <screen id="networkv6$Maker.edit" template="com/company/networkv6/web/maker/maker-edit.xml"/>
+</screen-config>

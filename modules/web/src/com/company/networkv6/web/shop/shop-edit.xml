@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.networkv6.web.shop.ShopEdit"
+        datasource="shopDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.networkv6.web.shop">
+    <dsContext>
+        <datasource id="shopDs"
+                    class="com.company.networkv6.entity.Shop"
+                    view="shop-with-network"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions" spacing="true">
+        <tabSheet>
+        <tab id="tab1" caption="Tab 1" margin="true" spacing="true">
+        <fieldGroup id="fieldGroup" datasource="shopDs">
+            <column width="250px">
+                <field property="number"/>
+                <field property="name"/>
+                <field property="network"/>
+            </column>
+        </fieldGroup>
+           </tab>
+        </tabSheet>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

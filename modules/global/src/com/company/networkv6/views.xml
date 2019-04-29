@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="networkv6$Shop" name="shop-with-network" extends="_local">
+        <property name="network" view="_minimal">
+            <property name="fullName"/>
+        </property>
+    </view>
+    <view entity="networkv6$Goods" name="goods-with-maker" extends="_local">
+        <property name="maker" view="_minimal"/>
+    </view>
+    <view entity="networkv6$Maker" name="maker-with-user" extends="_local">
+        <property name="user" view="_minimal"/>
+    </view>
+</views>

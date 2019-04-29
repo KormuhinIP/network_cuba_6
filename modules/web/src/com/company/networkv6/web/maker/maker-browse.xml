@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.networkv6.web.maker.MakerBrowse"
+        focusComponent="makersTable"
+        lookupComponent="makersTable"
+        messagesPack="com.company.networkv6.web.maker">
+    <dsContext>
+        <groupDatasource id="makersDs"
+                         class="com.company.networkv6.entity.Maker"
+                         view="maker-with-user">
+            <query>
+                <![CDATA[select e from networkv6$Maker e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="makersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="makersTable"
+                datasource="makersDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="makersTable"
+                    width="100%">
+            <actions>
+                <action id="create"
+                        openType="NEW_TAB"/>
+                <action id="edit"
+                        openType="NEW_TAB"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="fullName"/>
+                <column id="user"/>
+            </columns>
+            <rows datasource="makersDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="makersTable.create"/>
+                <button id="editBtn" action="makersTable.edit"/>
+                <button id="removeBtn" action="makersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

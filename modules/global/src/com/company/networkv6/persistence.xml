@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="networkV6" transaction-type="RESOURCE_LOCAL">
+
+        <class>com.company.networkv6.entity.Network</class>
+        <class>com.company.networkv6.entity.Shop</class>
+        <class>com.company.networkv6.entity.Maker</class>
+        <class>com.company.networkv6.entity.Goods</class>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.networkv6.web.shop.ShopBrowse"
+        focusComponent="shopsTable"
+        lookupComponent="shopsTable"
+        messagesPack="com.company.networkv6.web.shop">
+    <dsContext>
+        <groupDatasource id="shopsDs"
+                         class="com.company.networkv6.entity.Shop"
+                         view="shop-with-network">
+            <query>
+                <![CDATA[select e from networkv6$Shop e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="shopsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="shopsTable"
+                datasource="shopsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="shopsTable"
+                    width="100%">
+            <actions>
+                <action id="create"
+                        openType="NEW_TAB"/>
+                <action id="edit"
+                        openType="NEW_TAB"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="number"/>
+                <column id="name"/>
+                <column id="network"/>
+            </columns>
+            <rows datasource="shopsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="shopsTable.create"/>
+                <button id="editBtn" action="shopsTable.edit"/>
+                <button id="removeBtn" action="shopsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>
